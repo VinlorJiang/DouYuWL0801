@@ -16,6 +16,11 @@
 		817460B01F30632800F491F0 /* FollowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817460AF1F30632800F491F0 /* FollowViewController.swift */; };
 		817460B71F3063B800F491F0 /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817460B61F3063B800F491F0 /* DiscoverViewController.swift */; };
 		817460B91F30657400F491F0 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817460B81F30657400F491F0 /* ProfileViewController.swift */; };
+		817460BB1F308B2800F491F0 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 817460BA1F308B2800F491F0 /* Home.storyboard */; };
+		817460BD1F308BFA00F491F0 /* Live.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 817460BC1F308BFA00F491F0 /* Live.storyboard */; };
+		817460BF1F308C1200F491F0 /* Follow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 817460BE1F308C1200F491F0 /* Follow.storyboard */; };
+		817460C11F308C2700F491F0 /* Discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 817460C01F308C2700F491F0 /* Discover.storyboard */; };
+		817460C31F308C3F00F491F0 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 817460C21F308C3F00F491F0 /* Profile.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +35,11 @@
 		817460AF1F30632800F491F0 /* FollowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowViewController.swift; sourceTree = "<group>"; };
 		817460B61F3063B800F491F0 /* DiscoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DiscoverViewController.swift; path = ../../Profile/Controller/DiscoverViewController.swift; sourceTree = "<group>"; };
 		817460B81F30657400F491F0 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		817460BA1F308B2800F491F0 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Home.storyboard; path = DouYuWL0801/Home/Controller/Home.storyboard; sourceTree = SOURCE_ROOT; };
+		817460BC1F308BFA00F491F0 /* Live.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Live.storyboard; path = DouYuWL0801/Live/Controller/Live.storyboard; sourceTree = SOURCE_ROOT; };
+		817460BE1F308C1200F491F0 /* Follow.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Follow.storyboard; path = DouYuWL0801/Follow/Follow.storyboard; sourceTree = SOURCE_ROOT; };
+		817460C01F308C2700F491F0 /* Discover.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Discover.storyboard; path = DouYuWL0801/Discover/Discover.storyboard; sourceTree = SOURCE_ROOT; };
+		817460C21F308C3F00F491F0 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Profile.storyboard; path = DouYuWL0801/Profile/Profile.storyboard; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,6 +212,11 @@
 			isa = PBXGroup;
 			children = (
 				8174607C1F3052C900F491F0 /* Main.storyboard */,
+				817460C21F308C3F00F491F0 /* Profile.storyboard */,
+				817460C01F308C2700F491F0 /* Discover.storyboard */,
+				817460BE1F308C1200F491F0 /* Follow.storyboard */,
+				817460BC1F308BFA00F491F0 /* Live.storyboard */,
+				817460BA1F308B2800F491F0 /* Home.storyboard */,
 				8174609A1F30571A00F491F0 /* Controller */,
 				8174609B1F30571A00F491F0 /* Model */,
 				8174609C1F30571A00F491F0 /* View */,
@@ -426,7 +441,12 @@
 			files = (
 				817460831F3052C900F491F0 /* LaunchScreen.storyboard in Resources */,
 				817460801F3052C900F491F0 /* Assets.xcassets in Resources */,
+				817460C31F308C3F00F491F0 /* Profile.storyboard in Resources */,
 				8174607E1F3052C900F491F0 /* Main.storyboard in Resources */,
+				817460BD1F308BFA00F491F0 /* Live.storyboard in Resources */,
+				817460BB1F308B2800F491F0 /* Home.storyboard in Resources */,
+				817460C11F308C2700F491F0 /* Discover.storyboard in Resources */,
+				817460BF1F308C1200F491F0 /* Follow.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
