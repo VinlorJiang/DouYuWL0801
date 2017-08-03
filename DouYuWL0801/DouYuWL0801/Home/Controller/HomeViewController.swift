@@ -20,6 +20,7 @@ class HomeViewController: UIViewController {
     fileprivate lazy var pageTitleView : PageTitleView = {
         let frame = CGRect(x: 0, y: kStatusH + kNavH, width: kScreenW, height: kPageTitleViewH)
         let pageTitleView = PageTitleView(frame: frame, titles: ["推荐","游戏","娱乐","趣玩"])
+        pageTitleView.delegate = self
         
         return pageTitleView
     }()
@@ -37,7 +38,8 @@ class HomeViewController: UIViewController {
         }
         
         let pageContentView = PageContentView(frame: frame, childVcs: viewController, parentViewController: self)
-      
+        pageContentView.delegate = self
+        
         return pageContentView
     }()
     
