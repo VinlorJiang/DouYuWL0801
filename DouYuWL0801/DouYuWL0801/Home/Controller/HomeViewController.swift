@@ -30,7 +30,9 @@ class HomeViewController: UIViewController {
         let frame = CGRect(x: 0, y: y, width: kScreenW, height: kScreenH - y - kTabBarH)
         
         var viewController = [UIViewController]()
-        for i in 0..<4 {
+        let recommedVC = RecommendViewController()
+        viewController.append(recommedVC)
+        for i in 0..<3 {
             
             let vc = UIViewController()
             vc.view.backgroundColor = UIColor.randomColor()

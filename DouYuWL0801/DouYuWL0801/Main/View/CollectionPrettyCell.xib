@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="CollectionPrettyCell" customModule="DouYuWL0801" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="182" height="215"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="182" height="215"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="877-wI-ZoK">
+                        <rect key="frame" x="0.0" y="0.0" width="182" height="165"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="智付电子支付" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vxh-xC-KNX">
+                        <rect key="frame" x="0.0" y="170" width="177" height="16"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="16" id="M5u-tT-aav"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hcu-bv-FoF">
+                        <rect key="frame" x="0.0" y="191" width="46" height="14"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="14" id="ZhA-RE-qN1"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <state key="normal" title="深圳市" image="ico_location">
+                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x5A-yb-jWw">
+                        <rect key="frame" x="114" y="8" width="60" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="60" id="R2k-YK-vZy"/>
+                            <constraint firstAttribute="height" constant="20" id="hMu-gK-tyi"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <state key="normal" title="6666在线">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                    </button>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="Hcu-bv-FoF" secondAttribute="bottom" constant="10" id="LgR-nF-qWb"/>
+                <constraint firstItem="877-wI-ZoK" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="OVx-Ye-kD1"/>
+                <constraint firstAttribute="trailing" secondItem="x5A-yb-jWw" secondAttribute="trailing" constant="8" id="Ufu-gi-3I4"/>
+                <constraint firstItem="vxh-xC-KNX" firstAttribute="top" secondItem="877-wI-ZoK" secondAttribute="bottom" constant="5" id="akw-fM-uLl"/>
+                <constraint firstItem="877-wI-ZoK" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="eIa-kN-FzC"/>
+                <constraint firstItem="x5A-yb-jWw" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="kuI-ea-uRq"/>
+                <constraint firstItem="Hcu-bv-FoF" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="ohK-dn-cH0"/>
+                <constraint firstAttribute="trailing" secondItem="877-wI-ZoK" secondAttribute="trailing" id="rvd-V8-e7P"/>
+                <constraint firstAttribute="trailing" secondItem="vxh-xC-KNX" secondAttribute="trailing" constant="5" id="uAu-gK-jWc"/>
+                <constraint firstItem="Hcu-bv-FoF" firstAttribute="top" secondItem="vxh-xC-KNX" secondAttribute="bottom" constant="5" id="vh3-bU-p2i"/>
+                <constraint firstItem="vxh-xC-KNX" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="whc-nV-AEi"/>
+            </constraints>
+            <connections>
+                <outlet property="cityBtn" destination="Hcu-bv-FoF" id="erA-fs-mRj"/>
+                <outlet property="iconImageView" destination="877-wI-ZoK" id="nat-o0-LeE"/>
+                <outlet property="nickNameLabel" destination="vxh-xC-KNX" id="zNb-fj-PJy"/>
+                <outlet property="onlineBtn" destination="x5A-yb-jWw" id="af0-Hf-b9d"/>
+            </connections>
+            <point key="canvasLocation" x="71" y="53.5"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="ico_location" width="12" height="12"/>
+    </resources>
+</document>
