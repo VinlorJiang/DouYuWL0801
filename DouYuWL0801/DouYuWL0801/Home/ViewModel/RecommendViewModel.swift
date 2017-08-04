@@ -9,6 +9,7 @@
 import UIKit
 
 class RecommendViewModel: BaseViewModel {
+    lazy var cycleModels : [CycleModel] = [CycleModel]()
     fileprivate lazy var bigDataGroup : AnchorGroup = AnchorGroup()
     fileprivate lazy var prettyGroup : AnchorGroup = AnchorGroup()
 }
@@ -51,11 +52,32 @@ extension RecommendViewModel {
             dgroup.leave()
         }
         
+        dgroup.enter()
+        loadAnchorDatas(isGroupData: true, URLString: "http://capi.douyucdn.cn/api/v1/getHotCate", parameters: parameters) {
+            dgroup.leave()
+        }
+        
         dgroup.notify(queue : DispatchQueue.main) {
             self.anchorgroups.insert(self.prettyGroup, at: 0)
             self.anchorgroups.insert(self.bigDataGroup, at: 0)
             
             finishedCallback()
         }
+        
     }
+    func requestCycleData(_ finishCallback: @escaping () -> ()) {
+        NetWorkTool.requestDate(.get, URLString: "http://www.douyutv.com/api/v1/slide/6", parameters: ["version" : "2.300"]) { (result) in
+            
+            guard let resultDic = result as? [String : NSObject] else { return }
+            
+            guard let dataArray = resultDic["data"] as? [[String : NSObject]] else { return }
+            
+            for dict in dataArray {
+                self.cycleModels.append(CycleModel(dict: dict))
+                
+            }
+            finishCallback()
+        }
+    }
+
 }

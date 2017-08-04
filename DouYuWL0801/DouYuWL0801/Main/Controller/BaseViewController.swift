@@ -61,7 +61,7 @@ class BaseViewController: UIViewController {
 }
 
 extension BaseViewController {
-    fileprivate func setupUI() {
+    func setupUI() {
        view.addSubview(collectionView)
         
     
@@ -96,5 +96,22 @@ extension BaseViewController : UICollectionViewDataSource {
 }
 
 extension BaseViewController : UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let anchor = baseVM.anchorgroups[indexPath.section].anchors[indexPath.item]
+        
+        anchor.isVertical == 0 ? pushNormalRoomVc() : presentShowRoomVc()
+    }
     
+    private func presentShowRoomVc() {
+        let showRoomVc = RoomShowViewController()
+        
+        
+        present(showRoomVc, animated: true, completion: nil)
+    }
+    
+    private func pushNormalRoomVc() {
+        let normalRoomVc = RoomNormalViewController()
+        
+        navigationController?.pushViewController(normalRoomVc, animated: true)
+    }
 }

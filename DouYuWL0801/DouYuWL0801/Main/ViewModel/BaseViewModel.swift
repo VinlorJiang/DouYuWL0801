@@ -14,7 +14,7 @@ class BaseViewModel {
 }
 
 extension BaseViewModel {
-    func loadAnchorDats(isGroupData : Bool, URLString : String, parameters : [String : Any]? = nil, finishedCallback : @escaping ()->()) {
+    func loadAnchorDatas(isGroupData : Bool, URLString : String, parameters : [String : Any]? = nil, finishedCallback : @escaping ()->()) {
         NetWorkTool.requestDate(.get, URLString: URLString, parameters: parameters) { (result) in
             
             guard let resultDic = result as? [String : Any] else { return }

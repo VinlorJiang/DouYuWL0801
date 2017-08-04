@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="CollectionCycleCell" customModule="DouYuWL0801" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="314" height="152"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="314" height="152"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3OZ-3n-uB7">
+                        <rect key="frame" x="0.0" y="0.0" width="314" height="152"/>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dfu-Iv-9tT">
+                        <rect key="frame" x="0.0" y="122" width="314" height="30"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="智付电子支付" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cLN-RS-mUW">
+                                <rect key="frame" x="15" y="7.5" width="80" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="0IZ-yA-QGQ"/>
+                            <constraint firstItem="cLN-RS-mUW" firstAttribute="centerY" secondItem="dfu-Iv-9tT" secondAttribute="centerY" id="OLX-D8-Hxm"/>
+                            <constraint firstItem="cLN-RS-mUW" firstAttribute="leading" secondItem="dfu-Iv-9tT" secondAttribute="leading" constant="15" id="aUf-wU-iQO"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="3OZ-3n-uB7" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="0wj-Tc-Mp4"/>
+                <constraint firstAttribute="trailing" secondItem="3OZ-3n-uB7" secondAttribute="trailing" id="21i-ck-2Do"/>
+                <constraint firstAttribute="bottom" secondItem="dfu-Iv-9tT" secondAttribute="bottom" id="9fA-0F-gbo"/>
+                <constraint firstAttribute="trailing" secondItem="dfu-Iv-9tT" secondAttribute="trailing" id="Ncg-6g-4nh"/>
+                <constraint firstItem="3OZ-3n-uB7" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Zzk-eS-Sw9"/>
+                <constraint firstItem="dfu-Iv-9tT" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="c7i-Gr-QJB"/>
+                <constraint firstAttribute="bottom" secondItem="3OZ-3n-uB7" secondAttribute="bottom" id="tDk-sl-S48"/>
+            </constraints>
+            <connections>
+                <outlet property="iconImageView" destination="3OZ-3n-uB7" id="SXd-oj-wVZ"/>
+                <outlet property="titleLabel" destination="cLN-RS-mUW" id="MbX-5U-lw5"/>
+            </connections>
+        </collectionViewCell>
+    </objects>
+</document>
