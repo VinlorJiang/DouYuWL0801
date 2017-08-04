@@ -9,7 +9,7 @@
 import UIKit
 
 private let kNormalCellID = "kNormalCellID"
-private let kPrettyCellID = "kPrettyCellID"
+let kPrettyCellID = "kPrettyCellID"
 private let kHeaderViewID = "kHeaderViewCellID"
 
 
@@ -24,8 +24,11 @@ let kPrettyItemH = kNormalItemW * 4 / 3
 
 class BaseViewController: UIViewController {
 
+    var baseVM : BaseViewModel!
+    
+    
     // MARK:- 懒加载属性
-    fileprivate lazy var collectionView : UICollectionView = {[unowned self] in
+    lazy var collectionView : UICollectionView = {[unowned self] in
         
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: kNormalItemW, height: kNormalItemH)
@@ -37,6 +40,7 @@ class BaseViewController: UIViewController {
         let collectionView = UICollectionView(frame: self.view.bounds, collectionViewLayout: layout)
         collectionView.backgroundColor = UIColor.white
         collectionView.dataSource = self
+        collectionView.delegate = self
         collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         collectionView.register(UINib(nibName: "CollectionNormalCell", bundle: nil), forCellWithReuseIdentifier: kNormalCellID)
         collectionView.register(UINib(nibName: "CollectionPrettyCell", bundle: nil), forCellWithReuseIdentifier: kPrettyCellID)
@@ -50,6 +54,7 @@ class BaseViewController: UIViewController {
         super.viewDidLoad()
 
         setupUI()
+        loadData()
     }
 
 
@@ -62,24 +67,34 @@ extension BaseViewController {
     
     }
 }
-
+extension BaseViewController {
+    func loadData() {
+        
+    }
+}
 extension BaseViewController : UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 12
+        return baseVM.anchorgroups.count
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if section == 0 {
-            return 8
-        }
-        return 4
+        return baseVM.anchorgroups[section].anchors.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kNormalCellID, for: indexPath) as! CollectionNormalCell
+        cell.anchor = baseVM.anchorgroups[indexPath.section].anchors[indexPath.item]
+        
         return cell
+        
+        
     }
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: kHeaderViewID, for: indexPath) as! CollectionHeaderView
         return headerView
         
     }
+}
+
+extension BaseViewController : UICollectionViewDelegate {
+    
 }

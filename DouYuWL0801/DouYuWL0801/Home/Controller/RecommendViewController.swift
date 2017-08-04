@@ -9,27 +9,42 @@
 import UIKit
 
 class RecommendViewController: BaseViewController {
+    
+    fileprivate lazy var recommendVM : RecommendViewModel = RecommendViewModel()
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+
+}
+
+extension RecommendViewController {
+    override func loadData() {
+       self.baseVM = recommendVM
+        
+        recommendVM.requestData {
+            self.collectionView.reloadData()
+            
+            
+        }
     }
+}
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+extension RecommendViewController : UICollectionViewDelegateFlowLayout {
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if indexPath.section == 1 {
+            let prettyCell = collectionView.dequeueReusableCell(withReuseIdentifier: kPrettyCellID, for: indexPath) as! CollectionPrettyCell
+            prettyCell.anchor = recommendVM.anchorgroups[indexPath.section].anchors[indexPath.item]
+            
+            return prettyCell
+            
+        } else {
+            return super.collectionView(collectionView, cellForItemAt: indexPath)
+        }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        if indexPath.section == 1 {
+            return CGSize(width: kNormalItemW, height: kPrettyItemH)
+        }
+        return CGSize(width: kNormalItemW, height: kNormalItemH)
     }
-    */
-
 }
